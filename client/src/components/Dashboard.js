@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 class Dashbord extends Component {
   renderContent() {
@@ -20,11 +21,18 @@ class Dashbord extends Component {
   }
   render() {
     return (
+      <div>
         <div style={{ textAlign: "center" }}>
           <h1>RateMyApp!</h1>
           {this.renderContent()}
           Collect feedback form your users
-        </div>  
+        </div>
+        <div className="fixed-action-btn">
+          <Link to="/surveys/new" className="btn-floating btn-large red darken-4 pulse">
+            <i className="material-icons">chat_bubble_outline</i>
+          </Link>
+        </div>
+      </div>
     );
   }
 }
